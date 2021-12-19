@@ -21,7 +21,9 @@ class BusinessTypesListRequest extends GetRequest
      */
     public function __construct($country = null)
     {
-        $this->body['country'] = $country;
+        if (!is_null($country)) {
+            $this->body['country'] = $country;
+        }
     }
 
     /**
